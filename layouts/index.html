@@ -19,7 +19,7 @@
         {{ range .Site.Data.news.items }}
         <li class="news-item">
           <div class="news-date">{{ .date }}</div>
-          <div class="news-text"><span class="badge">{{ .type }}</span>{{ .text }}</div>
+          <div class="news-text"><span class="badge">{{ .type }}</span>{{ .text | safeHTML }}</div>
         </li>
         {{ end }}
       </ul>

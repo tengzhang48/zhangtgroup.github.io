@@ -1,10 +1,12 @@
 baseURL = "https://zhangtgroup.github.io/"
 languageCode = "en-us"
 title = "Zhang Research Group"
+disableKinds = ["taxonomy", "term"]
 
 [params]
   description = "Mechanics of Morphing Structures, Interfaces, and Biological Systems"
   tagline = "Mechanics of Morphing Structures, Interfaces, and Biological Systems"
+  heroDesc = "We use mechanics to understand and design materials and structures, drawing on problems from biology, soft matter, and engineering."
   department = "Mechanical & Aerospace Engineering · Syracuse University"
   email = "tzhang48@syr.edu"
   scholar = "https://scholar.google.com/citations?user=sTvwiocAAAAJ"
