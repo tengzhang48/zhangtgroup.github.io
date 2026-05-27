@@ -1,0 +1,118 @@
+{{ define "main" }}
+
+<!-- HERO -->
+<div class="container">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-tag">{{ .Site.Params.department }}</div>
+      <h1>{{ .Site.Params.tagline }}</h1>
+      <p class="hero-sub">Prof. Teng Zhang · Syracuse University</p>
+      <p class="hero-desc">{{ .Site.Params.heroDesc }}</p>
+      <div class="hero-btns">
+        <a href="/research/" class="btn btn-primary">Our research →</a>
+        <a href="/publications/" class="btn btn-secondary">Publications</a>
+      </div>
+    </div>
+    <div class="hero-sidebar">
+      <div class="sidebar-label">Recent news</div>
+      <ul class="news-list">
+        {{ range .Site.Data.news.items }}
+        <li class="news-item">
+          <div class="news-date">{{ .date }}</div>
+          <div class="news-text"><span class="badge">{{ .type }}</span>{{ .text }}</div>
+        </li>
+        {{ end }}
+      </ul>
+      <div class="sidebar-footer">
+        8,007 citations · h-index 28 ·
+        <a href="{{ .Site.Params.scholar }}" target="_blank">Google Scholar →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RESEARCH THEMES -->
+<div class="container">
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Research themes</h2>
+      <a href="/research/" class="section-link">View all →</a>
+    </div>
+    <div class="card-grid">
+      <a href="/research/#morphing" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 8 Q5 2 8 8 Q11 14 14 8" stroke="#3B4FBF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Morphing structures &amp; reconfigurable systems</h3>
+        <p>Programmable shape change through bistability, elastic instabilities, and magneto-mechanical actuation.</p>
+      </a>
+      <a href="/research/#interfaces" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M2 10 Q8 4 14 10" stroke="#3B4FBF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+            <line x1="2" y1="10" x2="14" y2="10" stroke="#3B4FBF" stroke-width="0.75" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <h3>Interfaces &amp; soft matter</h3>
+        <p>Elasto-capillary coupling, adhesion, and hygro-mechanical interactions in soft and bio-hybrid systems.</p>
+      </a>
+      <a href="/research/#biological" class="card" style="text-decoration:none;color:inherit;">
+        <div class="card-icon">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <circle cx="8" cy="5" r="3" stroke="#3B4FBF" stroke-width="1.5"/>
+            <path d="M4 13 Q4 9 8 9 Q12 9 12 13" stroke="#3B4FBF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3>Biological systems &amp; bioinspired mechanics</h3>
+        <p>Mechanics models of living systems — somite formation, biofilm control — and bioinspired engineering design.</p>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- SELECTED PUBLICATIONS -->
+<div class="container">
+  <div class="section">
+    <div class="section-header">
+      <h2 class="section-title">Selected publications</h2>
+      <a href="/publications/" class="section-link">All 73 papers →</a>
+    </div>
+    <div class="pub-list">
+      {{ range .Site.Data.featured_pubs.items }}
+      <div class="pub-item">
+        <div class="pub-year">{{ .year }}</div>
+        <div class="pub-body">
+          <div class="pub-title">{{ .title }}{{ if .tag }}<span class="pub-tag">{{ .tag }}</span>{{ end }}</div>
+          <div class="pub-authors">{{ .authors }}</div>
+          <div class="pub-journal">{{ .journal }}</div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+<!-- PEOPLE PREVIEW -->
+<div class="container">
+  <div class="section" style="border-bottom:none;">
+    <div class="section-header">
+      <h2 class="section-title">People</h2>
+      <a href="/people/" class="section-link">Full roster →</a>
+    </div>
+    <div class="people-grid">
+      {{ range .Site.Data.people.current }}
+      <div class="person-card">
+        <div class="avatar">
+          {{ if .photo }}<img src="{{ .photo }}" alt="{{ .name }}">{{ else }}{{ .initials }}{{ end }}
+        </div>
+        <div class="person-name">{{ .name }}</div>
+        <div class="person-role">{{ .role }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+
+{{ end }}

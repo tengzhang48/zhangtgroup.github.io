@@ -1,0 +1,43 @@
+---
+title: "Research"
+---
+
+# Research
+
+We use mechanics as an enabling tool — drawing on biological observation, building theoretical and computational models, and translating those models into engineered systems. The three threads below describe our current work. They are connected: many projects cross more than one thread.
+
+---
+
+## Morphing structures and reconfigurable systems {#morphing}
+
+Many structures in nature can snap between shapes, hold a position without power, and switch states on command. We want to understand why — and use that understanding to build things. Our main tool is computational modeling. We developed a method that maps out the energy landscape of an elastic structure, revealing all its stable states and the paths between them. This lets us design structures that switch reliably rather than by trial and error.
+
+We extended this to magnetic systems. A magnet embedded in a soft structure changes how it deforms. We built simulation tools that capture this coupling efficiently, and used them to design ribbon arrays that flip between multiple shapes under a remote magnetic field — with no wires, no motors, and no continuous power. One application is programmable liquid manipulation for diagnostics.
+
+The Erodium seed drills itself into soil by unwinding a helical stalk. We built mechanics models of this process and used them to design a three-tailed wood-based seed carrier that outperforms the natural version across many soil types. A flat pasta groove story follows the same logic: the right groove geometry makes flat dough curl into a specific 3D shape when cooked.
+
+Key papers: *Nature* (2023) · *JMPS* (2024) · *Device* (2026) · *JAM* (2026)
+
+---
+
+## Interfaces and soft matter {#interfaces}
+
+How a surface sticks, releases, and interacts with liquids depends on its geometry at small scales. We study wrinkled, grooved, and patterned surfaces to understand these interactions and control them. This includes how droplets behave at the tips of fibers, how soft pillars adhere and detach, and how surface topography can be actively changed by a magnetic field.
+
+These problems connect to real applications: coatings that resist bacterial growth, soft robots that grip and release objects, and bio-hybrid devices that work in wet environments.
+
+Key papers: *Advanced Functional Materials* (2023) · *Physical Review Fluids* (2025)
+
+---
+
+## Biological systems and bioinspired mechanics {#biological}
+
+Some of our work takes biology as the starting point for engineering design. Some takes biology as the subject itself.
+
+On the engineering side: the Erodium seed, millipede locomotion, and the Venus flytrap have all shaped how we think about morphing and actuation. These organisms solved hard mechanical problems over millions of years. We try to extract the principles and put them to work.
+
+On the science side: we are building mechanics models of somite formation — the process by which the vertebral column segments during embryonic development. The biochemistry of this process is fairly well understood, but the role of mechanical forces is not. We work closely with stem cell biologists on this. It is a new direction for our group, and one we find genuinely exciting.
+
+A third thread, in collaboration with Syracuse and ETH Zürich, uses magnetically driven surface topographies to fight bacterial biofilms on medical implants. A related project contributed to a soft robotic trunk, inspired by an elephant's, that helped a stroke patient open a cabinet and retrieve items from a refrigerator.
+
+Key papers: *Nature Communications* (2026) · *Advanced Functional Materials* (2025) · NSF CMMI (2025–2028)

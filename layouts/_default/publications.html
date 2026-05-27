@@ -1,0 +1,35 @@
+{{ define "main" }}
+<div class="container">
+<div class="page-content" style="max-width:800px;">
+
+<h1>Publications</h1>
+<p style="font-size:13px;color:var(--text-tertiary);margin-bottom:8px;">
+† corresponding author &nbsp;·&nbsp; * equal contribution &nbsp;·&nbsp; <u>underlined</u> = supervised trainee (student or postdoc)
+</p>
+<p style="font-size:13px;color:var(--text-tertiary);margin-bottom:32px;">
+<a href="https://scholar.google.com/citations?user=sTvwiocAAAAJ" target="_blank">Google Scholar</a>
+&nbsp;·&nbsp; 8,007 citations &nbsp;·&nbsp; h-index 28 &nbsp;·&nbsp; i10-index 54 (as of March 2026)
+</p>
+
+{{ range .Site.Data.publications.years }}
+<h2 class="pub-year-header">{{ .year }}</h2>
+<div class="pub-list" style="margin-bottom:8px;">
+  {{ range .papers }}
+  <div class="pub-item">
+    <div class="pub-year">{{ $.Page.Site.Data.publications | len }}</div>
+    <div class="pub-body">
+      <div class="pub-title">
+        {{ .title }}
+        {{ if .tag }}<span class="pub-tag">{{ .tag }}</span>{{ end }}
+      </div>
+      <div class="pub-authors">{{ .authors | safeHTML }}</div>
+      <div class="pub-journal"><em>{{ .journal }}</em>{{ if .details }}, {{ .details }}{{ end }}.</div>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}
+
+</div>
+</div>
+{{ end }}
