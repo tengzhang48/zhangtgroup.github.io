@@ -29,6 +29,16 @@ a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 img { max-width: 100%; display: block; }
 
+::selection { background: var(--accent-light); color: var(--accent); }
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+[id] { scroll-margin-top: 72px; }
+
 /* ─── Layout ─────────────────────────────────────────────── */
 .container {
   max-width: var(--max-width);
@@ -224,9 +234,14 @@ img { max-width: 100%; display: block; }
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 20px;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
-.card:hover { border-color: #aaa; }
+.card:hover {
+  border-color: #aaa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+}
 .card-icon {
   width: 32px;
   height: 32px;
@@ -260,9 +275,13 @@ img { max-width: 100%; display: block; }
   border-radius: var(--radius);
   padding: 20px 16px;
   text-align: center;
-  transition: border-color 0.15s;
+  transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
 }
-.person-card:hover { border-color: #aaa; }
+.person-card:hover {
+  border-color: #aaa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
 .avatar {
   width: 64px;
   height: 64px;
@@ -445,9 +464,6 @@ img { max-width: 100%; display: block; }
 }
 .pub-year-header:first-child { margin-top: 0; }
 
-/* ─── Google Fonts ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap');
-
 /* ─── Mobile nav toggle (hidden on desktop) ──────────────── */
 .nav-toggle {
   display: none;
@@ -484,7 +500,17 @@ img { max-width: 100%; display: block; }
   .hero h1 { font-size: 24px; }
   .hero-sub { font-size: 12px; }
   .hero-desc { font-size: 14px; }
-  .hero-sidebar { display: none; }
+  .hero-sidebar {
+    max-width: 100%;
+    max-height: 260px;
+    overflow-y: auto;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
 
   .card-grid { grid-template-columns: 1fr; }
   .people-grid { grid-template-columns: repeat(2, 1fr); }
@@ -519,4 +545,14 @@ img { max-width: 100%; display: block; }
   }
   .nav-links li:last-child { border-bottom: none; }
   .nav-links a { font-size: 14px; }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .card:hover, .person-card:hover { transform: none; box-shadow: none; }
 }
